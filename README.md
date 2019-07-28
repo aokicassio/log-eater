@@ -14,7 +14,8 @@ WINDOWS
 > gradlew bootRun -Pargs=--file.sourcefolder=C:/dev/log.txt
 
 Note: if you do not provide param file.sourcefolder app will run using in-project file sample:
-gradlew bootRun 
+
+> gradlew bootRun 
 
 LINUX
 
@@ -22,6 +23,11 @@ LINUX
 2) Run command below. Make sure you are pointing to correct file.
 
 > ./gradlew bootRun -Pargs=--file.sourcefolder=/c/dev/log.txt
+
+Or simply:
+
+> ./gradlew bootRun
+
 
 
 
