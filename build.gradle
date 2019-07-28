@@ -30,9 +30,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4'
 
-	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.12.0'
-	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.0'
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
 }

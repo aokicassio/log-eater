@@ -1,9 +1,10 @@
 package com.log.eater.batch.listener;
 
+import com.log.eater.batch.mapper.LogLineJsonMapperWrapper;
 import com.log.eater.model.Event;
 import com.log.eater.repository.EventRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
@@ -16,7 +17,7 @@ import java.util.List;
 @Component
 public class NotificationListener extends JobExecutionListenerSupport {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(NotificationListener.class);
+    private static final Logger LOGGER = LogManager.getLogger(NotificationListener.class);
 
     @Autowired
     private EventRepository eventRepository;

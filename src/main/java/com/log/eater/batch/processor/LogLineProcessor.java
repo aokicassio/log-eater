@@ -4,21 +4,21 @@ import com.log.eater.business.core.EventProcessor;
 import com.log.eater.model.Event;
 import com.log.eater.model.LogLine;
 import com.log.eater.model.State;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class LogLineProcessor implements ItemProcessor<LogLine, Event> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogLineProcessor.class);
+    private static final Logger LOGGER = LogManager.getLogger(LogLineProcessor.class);
 
     @Autowired
     private EventProcessor eventProcessor;
 
     @Override
     public Event process(LogLine item) throws Exception {
-        LOGGER.debug("Processing item: " + item.toString());
+        LOGGER.info("Processing item: " + item.toString());
         Event event = null;
 
         if(item.getState().equals(State.STARTED) && !eventProcessor.eventHasStarted(item.getId())){

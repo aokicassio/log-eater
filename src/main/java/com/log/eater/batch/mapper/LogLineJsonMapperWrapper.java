@@ -1,16 +1,17 @@
 package com.log.eater.batch.mapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.log.eater.batch.processor.LogLineProcessor;
 import com.log.eater.model.LogLine;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.batch.item.file.LineMapper;
 
 import java.io.IOException;
 
 public class LogLineJsonMapperWrapper implements LineMapper<LogLine> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogLineJsonMapperWrapper.class);
+    private static final Logger LOGGER = LogManager.getLogger(LogLineJsonMapperWrapper.class);
 
     private ObjectMapper mapper = new ObjectMapper();
 
